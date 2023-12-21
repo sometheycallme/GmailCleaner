@@ -23,17 +23,40 @@ Sign up for [Google App Scripts](https://script.google.com/) workspace.
 
 Click on New Project once you are signed in.
 
-### Copy the script
+### Project Settings
 
-In the new empty project, populate it with the two files.
+Make the manifest visible and edit the manifest. 
 
-```CleanupGmail.gs and appscript.json```
+The Apps Script editor hides manifest files by default in order to protect your Apps Script project settings. Follow these steps to make a hidden project manifest visible in the Apps Script editor:
 
-![Files to add](assets/files.png)
+- Open the script project in the Apps Script editor.
+- Click Project Settings settings.
+- Select the Show "appsscript.json" manifest file in editor checkbox.
+
+![Project Settings](assets/manifest.png)
+
+Copy in ```manifest.json```
 
 The appscript.json sets the scope for oauth.  You will be prompted for enabling
 the access to your personal account so that the script can run using your gmail
 credentials.  Go ahead and setup your account.
+
+### Copy the script
+
+In your new project add the script and copy in ```CleanupGmail.gs```
+
+![Files to add](assets/files.png)
+
+### Enable Gmail services
+
+Rename the appscript to appscript.json
+
+![Appscript](assets/rename.png)
+
+Enable Gmail services for the AppScript.
+
+![Gmail](assets/enable_gmail.png)
+
 
 ### Setup the schedule
 
