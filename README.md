@@ -77,3 +77,7 @@ Add a trigger for ```batchDeleteEmail``` to run hourly under triggers and save i
 Navigate over to executions to see the execution log.
 
 ![Executions](assets/executions.png)
+
+If all categories are below the 100 email threshold then stop processing.
+
+![Threshold](assets/threshold.png)
