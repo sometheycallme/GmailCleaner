@@ -23,6 +23,12 @@ Sign up for [Google App Scripts](https://script.google.com/) workspace.
 
 Click on New Project once you are signed in.
 
+### Enable Gmail services
+
+Enable Gmail services for the AppScript.
+
+![Gmail](assets/enable_gmail.png)
+
 ### Project Settings
 
 Make the manifest visible and edit the manifest. 
@@ -46,17 +52,6 @@ credentials.  Go ahead and setup your account.
 In your new project add the script and copy in ```CleanupGmail.gs```
 
 ![Files to add](assets/files.png)
-
-### Enable Gmail services
-
-Rename the appscript to appscript.json
-
-![Appscript](assets/rename.png)
-
-Enable Gmail services for the AppScript.
-
-![Gmail](assets/enable_gmail.png)
-
 
 ### Setup the schedule
 
