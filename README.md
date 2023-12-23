@@ -1,15 +1,17 @@
 # Gmail Garbage Collection
 
-Cleanup your personal Gmail using a [Google App Scripts](https://script.google.com)Project.
+Cleanup your personal Gmail using a [Google App Scripts](https://script.google.com).
 
 ![GMail Garbage Cleaner](assets/GmailGarbageCollection.png)
 
 ## About
 
-This handy little tool will leave you with no more than 100 Social, Updates, Promotions, and Forums emails.
+This AppScript will leave you with no more than 100 Social, Updates, Promotions, and Forums emails.
 
-If you have built up a lot of email subscriptions, notifications, and other updates and are not periodically
-unsubscribing or filtering, then you may have a good amount of junk email.
+If you have a lot of email subscriptions and other updates and you are not periodically
+unsubscribing, manually deleting, or filtering then you probably have good amount of junk email.
+
+You may even have to pay to [add storage](https://support.google.com/drive/answer/2375123?hl=en&co=GENIE.Platform%3DDesktop).
 
 ## Step by Step Guide
 
@@ -23,31 +25,37 @@ Click on New Project once you are signed in.
 
 ### Project Settings
 
-#### Setting 1
+#### Project Setting 1
 
 Enable Gmail services for the AppScript.
 
 ![Gmail](assets/enable_gmail.png) 
 
-#### Setting 2
+#### Project Setting 2
 
-The Apps Script editor hides manifest files by default in order to protect your Apps Script project settings. Follow these steps to make a hidden project manifest visible in the Apps Script editor:
+Copy in the ```appsscript.json``` to set the OAuth scope.
+
+The Apps Script editor hides manifest files by default in order to protect your 
+Apps Script project settings. Follow these steps to make a hidden project manifest 
+visible in the Apps Script editor:
 
 - Open the script project in the Apps Script editor.
 - Click Project Settings settings.
 - Select the Show "appsscript.json" manifest file in editor checkbox.
 
-Copy in ```manifest.json```
+You will be prompted to access to your personal account so that the script
+can run using your gmail credentials.
 
-The appscript.json sets the scope for oauth.  You will be prompted for enabling
-the access to your personal account so that the script can run using your gmail
-credentials.  Go ahead and setup your account.
+![Copy Manifest ](assets/gc2-appsscript.png)
 
-#### Setting 3
+![Consent](assets/gc2-consent.png)
 
-Edit the script properties and add the ```currentCategory``` property setting the starting point.
+#### Project Setting 3
 
-![Project Settings](assets/gc2-settings.png)
+Edit the script properties and add the ```currentCategory``` property setting a
+starting point.
+
+![Project Settings](assets/gc3-settings.png)
 
 
 ### Enter Editor mode
