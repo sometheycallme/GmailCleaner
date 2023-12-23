@@ -2,7 +2,7 @@
 
 Cleanup your personal Gmail using a [Google App Scripts](https://script.google.com)Project.
 
-~[GMail Garbage Cleaner](assets/GmailGarbageCollection.png)
+![GMail Garbage Cleaner](assets/GmailGarbageCollection.png)
 
 ## About
 
