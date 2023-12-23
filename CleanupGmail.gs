@@ -9,6 +9,7 @@ function batchDeleteEmails() {
   for (var i = 0; i < categories.length; i++) {
     // Update the current category in script properties
     currentCategory = categories[i];
+    // Set the ScriptProperties currentCateogry and rotate through them
     PropertiesService.getScriptProperties().setProperty('currentCategory', currentCategory);
 
     var category = 'category:' + currentCategory;

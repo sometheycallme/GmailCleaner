@@ -1,37 +1,35 @@
-# Got Junkmail?
+# Gmail Garbage Collection
 
-Cleanup your Gmail using AppScripts.  This handy little tool will
-periodically clean up Gmail categories.
+Cleanup your personal Gmail using a [Google App Scripts](https://script.google.com)Project.
 
-If you have built up a lot of email subscriptions, and are not periodically
+~[GMail Garbage Cleaner](assets/GmailGarbageCollection.png)
+
+## About
+
+This handy little tool will leave you with no more than 100 Social, Updates, Promotions, and Forums emails.
+
+If you have built up a lot of email subscriptions, notifications, and other updates and are not periodically
 unsubscribing or filtering, then you may have a good amount of junk email.
 
-[Google App Scripts](https://script.google.com/) can help keep your 
-tabs clean over time.  This simple script will batch cleanup 500 emails per 
-hour, through four categories.
-
-- Promotions
-- Social
-- Updates
-- Forums
+## Step by Step Guide
 
 ### Get started
 
 Sign up for [Google App Scripts](https://script.google.com/) workspace.
 
-![Main console](assets/appscripts.png)
+![Main console](assets/gc1-newproject.png)
 
 Click on New Project once you are signed in.
 
-### Enable Gmail services
+### Project Settings
+
+#### Setting 1
 
 Enable Gmail services for the AppScript.
 
-![Gmail](assets/enable_gmail.png)
+![Gmail](assets/enable_gmail.png) 
 
-### Project Settings
-
-Make the manifest visible and edit the manifest. 
+#### Setting 2
 
 The Apps Script editor hides manifest files by default in order to protect your Apps Script project settings. Follow these steps to make a hidden project manifest visible in the Apps Script editor:
 
@@ -39,17 +37,22 @@ The Apps Script editor hides manifest files by default in order to protect your 
 - Click Project Settings settings.
 - Select the Show "appsscript.json" manifest file in editor checkbox.
 
-![Project Settings](assets/manifest.png)
-
 Copy in ```manifest.json```
 
 The appscript.json sets the scope for oauth.  You will be prompted for enabling
 the access to your personal account so that the script can run using your gmail
 credentials.  Go ahead and setup your account.
 
-### Copy the script
+#### Setting 3
 
-In your new project add the script and copy in ```CleanupGmail.gs```
+Edit the script properties and add the ```currentCategory``` property setting the starting point.
+
+![Project Settings](assets/gc2-settings.png)
+
+
+### Enter Editor mode
+
+In your new project add the script and copy in ```CleanupGmail.gs``` in editor mode.
 
 ![Files to add](assets/files.png)
 
