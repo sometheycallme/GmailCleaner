@@ -2,7 +2,7 @@
 
 Cleanup your personal Gmail using a [Google App Scripts](https://script.google.com).
 
-![GMail Garbage Cleaner](assets/GmailGarbageCollection.png)
+![GMail Garbage Cleaner](assets/GmailGarbageCollector.png)
 
 ## About
 
@@ -29,7 +29,7 @@ Click on New Project once you are signed in.
 
 Enable Gmail services for the AppScript.
 
-![Gmail](assets/enable_gmail.png) 
+![Gmail](assets/gc0-enablegmail.png) 
 
 #### Project Setting 2
 
@@ -58,55 +58,42 @@ starting point.
 ![Project Settings](assets/gc3-settings.png)
 
 
-### Enter Editor mode
+### Add the script
 
-In your new project add the script and copy in ```CleanupGmail.gs``` in editor mode.
+Now that the project settings are in place add the script. Enter into editor mode and 
+copy in ```CleanupGmail.gs```.
 
-![Files to add](assets/files.png)
+![AddScript](assets/gc4-addscript.png)
 
 ### Setup the schedule
 
-The main constraint is the number of times you can call ```batchDeleteEmail``` in a 24 hour period.
+Add a new Trigger and select ```batchDeleteEmail``` to run on an hourly timer.
 
-The threshold seems to be [around ~10K](https://stackoverflow.com/questions/10619919/service-invoked-too-many-times-for-one-day-gmail-read).  The timer is set at 1x every hour for deleting a batch of emails.
-Navigate to Triggers:
+![Edit Trigger](assets/gc5-trigger.png)
 
-![Triggers](assets/trigger1.png)
+![Edit Tigger](assets/gc6-trigger.png)
 
-Add a new Trigger and select ```batchDeleteEmail``` to run on an hourly timer.  The categories are rotated through in the script here:
-
-```
-  // If there is no currentCategory or its the last category, reset to the first category
-  if (!currentCategory || categories.indexOf(currentCategory) === categories.length - 1) {
-    currentCategory = categories[0];
-  } else {
-    // Otherwise, move to the next category in the list
-    var currentIndex = categories.indexOf(currentCategory);
-    currentCategory = categories[currentIndex + 1];
-  }
-```
-
-You can modify the variable for different categories as needed.
-
-```var categories = ['Promotions', 'Social', 'Updates', 'Forums'];```
-
-Important: Anything more aggressive than batchSize=100 will cause the script to fail within a 24hour window.
+Important: The Max batchSize is 100.  Anything larger will cause the script to fail within a 24hour window.
 
 ```var batchSize = 100;```
 
-### Edit the trigger
+### Monitor and periodically check
 
-Add a trigger for ```batchDeleteEmail``` to run hourly under triggers and save it.
+Watch it run and periodically check it.  Navigate over to executions to see the execution log.
 
-![Edit Trigger](assets/edittrigger1.png)
-![Edit Trigger](assets/edittrigger2.png)
-
-### Watch it run and periodically check it
-
-Navigate over to executions to see the execution log.
-
-![Executions](assets/executions.png)
+![Executions](assets/gc7-executions.png)
 
 If all categories are below the 100 email threshold then stop processing.
 
-![Threshold](assets/threshold.png)
+![Threshold](assets/gc8-threshold.png)
+
+
+### Constraints
+
+The maximum batchSize is 100.
+
+```var batchSize = 100;```
+
+The main constraint is the number of times you can call ```batchDeleteEmail``` in a 24 hour period.
+
+Google throttles at [around ~10K daily](https://stackoverflow.com/questions/10619919/service-invoked-too-many-times-for-one-day-gmail-read).
