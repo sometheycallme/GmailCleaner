@@ -2,8 +2,6 @@
 
 Cleanup your personal Gmail using a [Google App Scripts](https://script.google.com).
 
-![GMail Garbage Cleaner](assets/GmailGarbageCollector.png)
-
 ## About
 
 This AppScript will leave you with no more than 100 Social, Updates, Promotions, and Forums emails.
