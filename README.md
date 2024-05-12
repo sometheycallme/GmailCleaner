@@ -88,8 +88,8 @@ If all categories are below the 100 email threshold then stop processing.
 
 ### Constraints
 
-The maximum batchSize is 100.  ```var batchSize = 100``
+The maximum batchSize is 100.  ```var batchSize = 100```
 
-The main constraint is the number of times you can call ```batchDeleteEmail`` in a 24 hour period.
+The main constraint is the number of times you can call ```batchDeleteEmail``` in a 24 hour period.
 
 Google throttles at [around ~10K daily](https://stackoverflow.com/questions/10619919/service-invoked-too-many-times-for-one-day-gmail-read).
